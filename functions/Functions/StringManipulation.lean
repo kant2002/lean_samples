@@ -8,7 +8,7 @@ def string2  := "world"
 def string3 := r"C:\Program Files\"
 
 -- String literals can also use r## to escape # inside raw stings.
-def string4 := r##"The computer said #"hello world" when I told it to!"##
+def string4 := r##"No # will escape prison of raw literals!"##
 
 -- String concatenation is normally done with the '++' operator.
 def helloWorld := string1 ++ " " ++ string2

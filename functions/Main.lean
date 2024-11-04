@@ -34,4 +34,5 @@ def main : IO Unit := do
   -- StringManipulation ---
   IO.println helloWorld
   IO.println string3
+  IO.println string4
   IO.println s!"{substring}"
