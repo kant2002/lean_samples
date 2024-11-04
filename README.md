@@ -5,3 +5,7 @@ This is samples of using Lean 4 for simple programming tasks. I will start it as
 
 - [Hello World](console)
 - [Functions](functions)
+
+## Other learning material
+
+- https://github.com/leanprover-community/lean4-samples
