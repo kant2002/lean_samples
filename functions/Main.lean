@@ -1,4 +1,5 @@
 import Functions
+open BasicFunctions
 
 def main : IO Unit := do
   -- There no separate formatting functions.
