@@ -2,8 +2,8 @@ namespace Lists
     -- Lists are defined using [ ... ].  You should specify type for empty list.
     def list1 : List Nat := [ ]
 
-    -- This is a list with 3 elements.  ';' is used to separate elements on the same line.
-    def list2 := [ 1; 2; 3 ]
+    -- This is a list with 3 elements.  ',' is used to separate elements on the same line.
+    def list2 := [ 1, 2, 3 ]
 
     -- You can also separate elements by placing them on their own lines.
     def list3 := [
