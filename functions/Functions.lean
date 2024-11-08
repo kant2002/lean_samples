@@ -5,3 +5,4 @@ import Functions.Immutability
 import Functions.IntegersAndNumbers
 import Functions.Booleans
 import Functions.StringManipulation
+import Functions.RecursiveFunctions

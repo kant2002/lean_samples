@@ -4,8 +4,10 @@ open Immutability
 open IntegersAndNumbers
 open Booleans
 open StringManipulation
+open RecursiveFunctions
 
 def main : IO Unit := do
+
   -- Basic functions ---
 
   -- There no separate formatting functions.
@@ -36,3 +38,8 @@ def main : IO Unit := do
   IO.println string3
   IO.println string4
   IO.println s!"{substring}"
+
+  -- RecursiveFunctions ---
+  IO.println s!"Factorial of 6 is: {factorial 6}"
+  IO.println s!"The Greatest Common Factor of 300 and 620 is {gcd 300 620}"
+  IO.println s!"The sum 1-10 is {sumListTailRecursive oneThroughTen}"
