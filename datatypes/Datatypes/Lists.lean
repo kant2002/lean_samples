@@ -32,6 +32,4 @@ namespace Lists
         |> List.filter (fun x => x % 3 = 0)
         |> sumBy (fun x => x * x)
 
-    --printfn $"The sum of the squares of numbers up to 1000 that are divisible by 3 is: %d{sumOfSquares}"
-
 end Lists
