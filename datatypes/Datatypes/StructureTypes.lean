@@ -38,7 +38,7 @@ structure ContactCardAlternate where
   Address  : String
   Verified : Bool
 
--- Members can implement object-oriented members.
+-- Members can implement *object-oriented* members.
 -- That's obviously a lie, since there no objects in lean.
 -- Lean just treat `val.fun` as `fun val`
 def ContactCardAlternate.PrintedContactCard (this : ContactCardAlternate)  :=
