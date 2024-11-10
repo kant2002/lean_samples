@@ -3,3 +3,4 @@
 import Datatypes.Tuples
 import Datatypes.Lists
 import Datatypes.StructureTypes
+import Datatypes.InductiveTypes
