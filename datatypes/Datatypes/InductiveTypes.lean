@@ -141,8 +141,8 @@ inductive Employee where
   | Manager (manager: Person) (reports: List Employee)
   | Executive (executive: Person) (reports: List Employee) (assistant: Employee)
 
-  def sumBy (vf: Employee → Nat) (list: List Employee) :=
-    List.foldl (fun state item => state + item) 0 (List.map vf list)
+def sumBy (vf: α → Nat) (list: List α) :=
+  List.foldl (fun state item => state + item) 0 (List.map vf list)
 
 -- Count everyone underneath the employee in the management hierarchy,
 -- including the employee. The matches bind names to the properties
