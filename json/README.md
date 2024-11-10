@@ -1,10 +1,10 @@
-# datatypes
+# json
 
-Simple how to use datatypes.
+Simple how to use JSON.
 
 ```
 lake build -R
-lake exe datatypes
+lake exe json
 ```
 
 In this sample collected information about: 
@@ -13,4 +13,4 @@ In this sample collected information about:
 - [Structure types or records](Datatypes/StructureTypes.lean), 
 - [Inductive types or tagged unions](Datatypes/InductiveTypes.lean).
 
-You can go to [Json](../json/README.md) after this section.
+<!-- You can go to [DataTypes](../datatypes/README.md) after this section. -->
