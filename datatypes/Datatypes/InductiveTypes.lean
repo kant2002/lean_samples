@@ -1,3 +1,8 @@
+-- You can think about inductive types as some form of tagged unions.
+-- That's a lie, but it helps you get started and do not think too
+-- much about mathematics initially. But don't forget that it's a lie, and
+-- when it hits you dig deeper.
+
 -- The following represents the suit of a playing card.
 inductive Suit where
   | Hearts : Suit
