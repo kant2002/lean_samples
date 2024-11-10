@@ -128,3 +128,38 @@ def BST.insert (bst: BST α) (k: Nat) (item: α) :=
         if k < key then Node k x (left.insert k item) right -- Call into left subtree.
         else if k > key then BST.Node k x left (right.insert k item) -- Call into right subtree.
         else BST.Node k x left right -- No need to insert, it already exists; return the node.
+
+-- A record for a person's first and last name
+structure Person where
+  First : string
+  Last  : string
+
+
+-- A Discriminated Union of 3 different kinds of employees
+inductive Employee where
+  | Engineer (engineer: Person)
+  | Manager (manager: Person) (reports: List Employee)
+  | Executive (executive: Person) (reports: List Employee) (assistant: Employee)
+
+  def sumBy (vf: Employee → Nat) (list: List Employee) :=
+    List.foldl (fun state item => state + item) 0 (List.map vf list)
+
+-- Count everyone underneath the employee in the management hierarchy,
+-- including the employee. The matches bind names to the properties
+-- of the cases so that those names can be used inside the match branches.
+-- Note that the names used for binding do not need to be the same as the
+-- names given in the definition above.
+-- To proove termination of iteration over data structure, I have to pass fuel
+def countReportsCore (fuel:Nat) (emp : Employee) :=
+  if fuel = 0 then 0
+  else
+    1 + match emp with
+        | .Engineer person =>
+            0
+        | .Manager person reports =>
+            reports |> sumBy (countReportsCore (fuel - 1))
+        | .Executive person reports assistant =>
+            (reports |> sumBy (countReportsCore (fuel - 1))) + countReportsCore (fuel - 1) assistant
+
+def countReports(emp : Employee) :=
+    countReportsCore 100000 emp
