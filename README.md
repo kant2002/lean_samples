@@ -6,6 +6,7 @@ This is samples of using Lean 4 for simple programming tasks. I will start it as
 - [Hello World](console)
 - [Functions](functions)
 - [Data types](datatypes)
+- [Json](json)
 
 ## Other learning material
 

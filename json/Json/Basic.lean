@@ -15,3 +15,6 @@ def jsonLiteral := json% {
 
 -- Getting property by name and extraction of value
 def cheese := (jsonLiteral.getObjVal? "cheese").bind Lean.Json.getArr?
+
+def parseFromString :=
+  Lean.Json.parse "[1,2, {\"data\":132}]"
