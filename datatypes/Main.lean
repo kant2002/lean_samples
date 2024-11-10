@@ -17,3 +17,6 @@ def main : IO Unit := do
 
   -- Inductive types --
   printAllCards
+
+  -- Printing single-case DUs is simple with unwrapping functions.
+  IO.println s!"Address: {address |> unwrapAddress}, Name: {name |> unwrapName}, and SSN: {ssn |> unwrapSSN}"
