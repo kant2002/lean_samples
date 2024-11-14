@@ -13,4 +13,4 @@ In this sample collected information about:
 - [Structure types or records](Datatypes/StructureTypes.lean), 
 - [Inductive types or tagged unions](Datatypes/InductiveTypes.lean).
 
-<!-- You can go to [DataTypes](../datatypes/README.md) after this section. -->
+You can go to [Files](../files/README.md) after this section.
