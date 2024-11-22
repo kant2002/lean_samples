@@ -42,6 +42,22 @@ def gcdAux : Nat → UInt16 → UInt16 → UInt16
 def gcd (a b : UInt16) : UInt16 :=
   if a ≤ b then gcdAux (a.toNat + b.toNat) a b else gcdAux (b.toNat + a.toNat) b a
 
+-- If you want to avoid fuel, you can make recursion
+-- well-founded. It means that we prove that value
+-- would be decreasing, and eventually stop.
+-- Since we have Nat datatype, we know if subsequent calls
+-- decrease m (<), then we eventually reach 0.
+def gcdWellFounded (m n : Nat) : Nat :=
+  if m = 0 then
+    n
+  else
+    gcdWellFounded (n % m) m
+  -- Additional proof of well-foundness below
+  termination_by m
+  decreasing_by
+    simp_wf;
+    apply Nat.mod_lt _ (Nat.zero_lt_of_ne_zero _);
+    assumption
 
 -- This example computes the sum of a list of integers using recursion.
 --
