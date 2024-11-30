@@ -25,6 +25,10 @@ namespace Lists
     -- Try uncomment line below.
     --#eval list4[6]
 
+    -- You can override compile-time checks
+    -- by placing ! after brackets.
+    def runtimeCheck := list4[6]! -- This will blow up
+
     -- This is a list of integers from 1 to 1000
     def numberList := List.range' 1 1000
 
