@@ -7,6 +7,8 @@ This is samples of using Lean 4 for simple programming tasks. I will start it as
 - [Functions](functions)
 - [Data types](datatypes)
 - [Json](json)
+- [Files](files)
+- [Unit testing](unittests)
 
 ## Other learning material
 
