@@ -16,4 +16,7 @@ namespace IntegersAndNumbers
         (sampleInteger/4 + 5 - 7) * 4
         + sampleDouble.toUInt64.toNat
 
+    def sampleTableOfSquares :=
+        Array.range 99 |> Array.map (fun i => (i, i*i))
+
 end IntegersAndNumbers
