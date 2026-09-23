@@ -23,8 +23,22 @@ def helloWorld :=
 -- This line extracts the first 7 characters as a substring.
 -- Note that like many languages,
 -- Strings are zero-indexed in Lean.
-def substring := helloWorld.extract ⟨0⟩ ⟨6⟩
+-- Position in Lean is index and proof of bounds.
+-- there special thing as start position (which can be accessed using .startPos).
+-- For construction of deliberate position, I use sorry which is obviosuly a not good practice.
+-- But don't think that making real proof for helper strings is practical.
+def substring :=
+  helloWorld.extract helloWorld.startPos (helloWorld.pos! ⟨6⟩)
 
-def removedWhitespaces := helloWorld.trim
+-- Here we safely get the position as an option.
+def off := helloWorld.pos? ⟨6⟩
+def substring2 :=
+  off.map (fun o => helloWorld.extract helloWorld.startPos o)
+
+-- Slice is different from substring. It is string + start index + end index + proof that start is less then end.
+-- Slice does not create new string as extract does.
+def slice := helloWorld.slice helloWorld.startPos (helloWorld.pos! ⟨6⟩)
+
+def removedWhitespaces := helloWorld.trimAscii
 
 end StringManipulation

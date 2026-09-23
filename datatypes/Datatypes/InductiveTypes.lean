@@ -62,7 +62,7 @@ def showPlayingCard (c: Card) :=
     | .King => "King"
     | .Queen => "Queen"
     | .Jack => "Jack"
-    | .Value n => String.mk (Nat.toDigits 10 n)
+    | .Value n => String.ofList (Nat.toDigits 10 n)
   let suitString :=
     match c.Suit with
     | .Clubs => "clubs"
@@ -113,7 +113,7 @@ inductive BST (α : Type u) where
 def BST.exists (bst: BST α) (item: Nat) :=
   match bst with
   | Empty => false
-  | Node key val left right =>
+  | Node key _val left right =>
       if item < key then left.exists item -- Check the left subtree.
       else if item > key then right.exists item -- Check the right subtree.
       else true
@@ -131,8 +131,8 @@ def BST.insert (bst: BST α) (k: Nat) (item: α) :=
 
 -- A record for a person's first and last name
 structure Person where
-  First : string
-  Last  : string
+  First : String
+  Last  : String
 
 
 -- A Discriminated Union of 3 different kinds of employees
@@ -158,7 +158,7 @@ def countReportsCore (fuel:Nat) (emp : Employee) :=
             0
         | .Manager person reports =>
             reports |> sumBy (countReportsCore (fuel - 1))
-        | .Executive person reports assistant =>
+        | .Executive _person reports assistant =>
             (reports |> sumBy (countReportsCore (fuel - 1))) + countReportsCore (fuel - 1) assistant
 
 def countReports(emp : Employee) :=

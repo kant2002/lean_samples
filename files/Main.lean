@@ -3,7 +3,7 @@ import Files
 def cleanupLine (line: String) :=
   let line := line.replace "\n" ""
   let line := line.replace "\r" ""
-  let line := line.trim
+  let line := line.trimAscii
   line
 
 def main : IO Unit := do
@@ -15,6 +15,6 @@ def main : IO Unit := do
   let outputHandle ← IO.FS.Handle.mk ⟨"output.txt"⟩ IO.FS.Mode.write
   let stream := IO.FS.Stream.ofHandle outputHandle
   for sentence in sentences do
-    stream.putStrLn (cleanupLine sentence)
+    stream.putStrLn (cleanupLine sentence.toString).toString
 
   stream.flush

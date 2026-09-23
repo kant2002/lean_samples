@@ -15,4 +15,4 @@ def fizzbuzz (value: Nat) :=
   else if value % 5 = 0 then
     "Buzz"
   else
-    ⟨Nat.toDigits 10 value⟩
+    String.ofList (Nat.toDigits 10 value)
